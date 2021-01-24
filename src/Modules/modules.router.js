@@ -12,15 +12,14 @@ import FILMSUBMISSONS from '../Modules/Components/film_submission.component';
 import VIEWMOVIE from '../Modules/Components/film_view.component';
 
 import { Route } from 'react-router-dom';
-import LAYOUT from '../layouts/layout';
 
 class MODULEROUTER extends Component {
 
-    
+    //  All the router path can include in Route
     render() {
         return (
             <Helper>
-                <Route exact path="/movies-list" component={FILMSUBMISSONS} />
+                <Route exact path="/" component={FILMSUBMISSONS} />
                 <Route exact path="/view-movie" component={VIEWMOVIE} />
                 
             </Helper>

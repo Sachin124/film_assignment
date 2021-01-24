@@ -3,16 +3,21 @@
  *   All rights reserved.
  */
 import React from 'react';
+import Pagination from "react-js-pagination";
+import helper from '../../hoc/helper';
+import '../../assets/css/pagination.css';
 
+// require("bootstrap/dist/css/bootstrap.min.css");
 const DATATABLE = (props) => {
-
+// setting dynamic headers
     const tableHeaders = props.headers.map((column, j) => (
-        <th  key={j}>{column}</th>
+        <th className="th_header" key={j}>{column}</th>
     ))
-
+  
    
-
+      
     return (
+        <helper>
         <div className="row">
             <div className="col-md-12">
                 <div className="card">
@@ -30,10 +35,12 @@ const DATATABLE = (props) => {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                </div>
+                             </div>
+                </div>                
             </div>
         </div>
+       
+        </helper>
     )
 };
 

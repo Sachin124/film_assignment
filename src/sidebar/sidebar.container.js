@@ -4,10 +4,12 @@
  */
 import React from 'react';
 import '../sidebar/sidebar.css';
-import LOGO from '../assets/logo.svg'
-import $ from 'jquery';
-// import { Route } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav'
+import LOGO from '../assets/logo.svg';
+import { Link } from 'react-router-dom';
+import DASHBOARD from '../assets/dashboard.svg'
+import FILM from '../assets/films.svg'
+import FILMMAKER from '../assets/filmmakers.svg'
+
 class SIDEBAR extends React.Component {
     state = {
         links: [
@@ -15,19 +17,22 @@ class SIDEBAR extends React.Component {
                 id: 1,
                 name: "Dashboard",
                 to: "/cms",
-                className: "active_link"
+                className: "active_link",
+                icon:DASHBOARD
             },
             {
                 id: 2,
                 name: "Film Submission",
-                to: "/cms",
-                className: "active_link"
+                to: "/",
+                className: "active_link",
+                icon:FILM
             },
             {
                 id: 3,
                 name: "Filmmakers",
                 to: "/cms",
-                className: "active_link"
+                className: "active_link",
+                icon:FILMMAKER
             }
         ],
         activeLink: 2
@@ -40,28 +45,21 @@ class SIDEBAR extends React.Component {
         return (
             <div className="bg-custom border-right" id="sidebar-wrapper">
                 <div className="sidebar-heading">
-                    <img className="logo" src={LOGO} />
+                    <img alt="logo" className="logo" src={LOGO} />
                 </div>
                 <div className="mt-4 list-group list-group-flush">
                     <p className="cm text-white">CONTENT</p>
-                    {/* <a href="#" className="list-group-item list-group-item-action">Dashboard</a>
-          <a href="#" className="list-group-item list-group-item-action">Film Submission</a>
-          <a href="#" className="list-group-item list-group-item-action">Filmmakers</a>
-          <a href="#" className="list-group-item list-group-item-action">Events</a>
-          <a href="#" className="list-group-item list-group-item-action">Profile</a>
-          <a href="#" className="list-group-item list-group-item-action">Status</a> */}
+                   
                     <div>
                         {links.map(link => {
                             return (
                                 <div key={link.id}>
-                                    <a
-                                        onMouseEnter={() => this.handleClick(link.id)}
+                                  <Link to="/"  onMouseEnter={() => this.handleClick(link.id)}
                                         className={'list-box list-group-item text-white ' +
                                             (link.id === activeLink ? link.className : "inactive_link")
-                                        }
-                                    >
-                                        {link.name} {link.id === activeLink}
-                                    </a>
+                                        }>  
+                    <img  alt={link+link.id} className="" src={link.icon} /> {link.name} {link.id === activeLink}
+                                    </Link>
                                 </div>
                             );
                         })}

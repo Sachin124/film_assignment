@@ -3,44 +3,48 @@
  *   All rights reserved.
  */
 
- import React from 'react';
- import { Link } from 'react-router-dom';
- import $ from 'jquery';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import $ from 'jquery';
 
- const VIEWFILM = (props)=>{
+const VIEWFILM = (props) => {
 
   let closeModel = () => {
     $('#exampleModal').modal('hide');
-    $("#wrapper").toggleClass("toggled");
+    // $("#wrapper").toggleClass("toggled");
 
-}
-// console.log(props)
-const movieDetails = props.movieDetails;
-    return(
+  }
 
-<div class="modal fade modal-mini" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog  modal-small" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title tc1 text-center" id="exampleModalLabel">{movieDetails.first_name}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  let closeModels = () => {
+    $('#exampleModal').modal('hide');
+
+  }
+  const movieDetails = props.movieDetails;
+  return (
+
+    <div className="modal fade modal-mini" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal-dialog  modal-small" role="document">
+        <div className="modal-content">
+          <div className="modal-body">
+            <p className="text-center tc2"><strong>Good choice :)</strong></p>
+            <div class="card">
+              <img class="card-img-top" src="https://img.youtube.com/vi/0yGThj4HskA/0.jpg" alt="Card image cap" />
+              <div class="card-body">
+                <h5 class="card-title">{movieDetails.first_name}</h5>
+                <p class="card-text ">Have you ever heard of a Sci-fi film made in under $75 or Rs.5500? Presenting to you - "The Countdown". </p>
+              </div>
+            </div>
+          </div>
+          <div className="modal-footer justify-content-center">
+            <Link to="/view-movie" onClick={() => { closeModels(); closeModel() }}  >  <p className="text-danger" data-dismiss="modal">later</p></Link>
+            <Link to="/view-movie" onClick={closeModel}> <p className="text-success">Play
+      </p></Link>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-      <p>Are you sure you want to watch this?</p>
-
-      </div>  
-      <div class="modal-footer justify-content-center">
-    <a   class="text-danger" data-dismiss="modal">No</a>
-    <Link to="/view-movie"  onClick={closeModel}> <a   class="text-success">Yes
-      </a></Link>  
-    </div>  
     </div>
-  </div>
-</div>
-    );
- }
+  );
+}
 
 
- export default VIEWFILM;
+export default VIEWFILM;
