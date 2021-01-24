@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+.navbar{
+  box-shadow: 7px 0 6px 0 rgba(216,216,216,0.59)
+}
+.cm{
+  margin: 0px 0px 14px 20px;
+  color: #99A4B1;
+  font-size: 13px;
+  font-weight: 500;
+}
+.table .thead-light th {
+  color: #495057;
+  background-color: #f7f7f7 !important;
+  border-color: #dee2e6;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.table .thead-light tr th {
+  border: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+/* Badge Colors */
+
+.bw{
+  width: 90px;
+  border-radius: 14px !important;
+}
+.badge-purple{
+  color: #ffffff;
+  background-color: #A55ED2;
+}
+.tc1{
+ color: #390d57;
+}
+
+.modal .modal-dialog {
+  margin-top: 120px;
+}
+
+.badge-yellow{
+  color: #ffffff;
+  background-color: #F1A95B;
+}
+.btn-link{
+  background-color: transparent;
+  color: #999;
+  box-shadow: none;
+}
+
+
+.modal-dialog .modal-content {
+  box-shadow: 0 27px 24px 0 rgba(0,0,0,.2), 0 40px 77px 0 rgba(0,0,0,.22);
+  border-radius: 6px;
+  border: none;
+}
+
+
+.btn-orange{
+  background-color:#FF6C61 !important;
+  color: #fff !important;
+  border-color: #FF6C61 !important;
+}
+
+.btn-white{
+  border: 1px solid #DADBE0 !important;
+  border-radius: 2px !important;
+  background-color: #FFFFFF !important;
+  color: #454D66 !important;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+/* Media QueriS */
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .modal-small {
+    width: 300px !important;
+    margin: 0 auto;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+  .modal-small {
+    width: 300px !important;
+    margin: 0 auto;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ 
+  .modal-small {
+    width: 300px !important;
+    margin: 0 auto;
   }
 }

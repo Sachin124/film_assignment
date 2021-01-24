@@ -1,9 +1,19 @@
+/*
+ *   Copyright (c) 2021 Sachin S. Bahegavankar
+ *   All rights reserved.
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './assets/loader.js'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'jquery/dist/jquery.min.js'
+import 'bootstrap/dist/js/bootstrap.min.js'
+global.jQuery = require('jquery');
+require('bootstrap');
 ReactDOM.render(
   <React.StrictMode>
     <App />
